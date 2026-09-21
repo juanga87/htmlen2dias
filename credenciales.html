@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/flowers.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <title>Regalo de septiembre</title>
+  </head>
+
+  <body>
+
+    <div class="credentials">
+
+      <h1>Uy, uy</h1>
+      <h1>Pareces alguien ¿cotidiano?</h1>
+
+      <p>Si es el caso, ingresa un código válido de 4 dígitos </p>
+
+      <input
+        type="text"
+        id="codigo"
+        maxlength="4"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        placeholder="_ _ _ _"
+      />
+
+      <button onclick="verificarCodigo()">Ingresar</button>
+
+      <p id="mensaje"></p>
+
+      <a href="common_flower.html" class="sin-clave">
+        No soy alguien cotidiano.
+      </a>
+
+    </div>
+
+    <script>
+      function verificarCodigo() {
+        const codigo = document.getElementById("codigo").value;
+        const mensaje = document.getElementById("mensaje");
+
+        const codigoCorrecto = "2705";
+
+        if (codigo === codigoCorrecto) {
+          window.location.href = "flower.html";
+        } else {
+          mensaje.textContent = "Código incorrecto";
+        }
+      }
+    </script>
+
+  </body>
+</html>
