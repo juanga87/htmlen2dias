@@ -344,6 +344,37 @@ body {
   
 }
 
+.boton-credenciales {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
+.boton-credenciales a {
+  display: inline-block;
+  padding: 3px 10px;
+
+  font-family: "Gaegu", cursive;
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #fff;
+  background-color: #ad2626;
+
+  border: 2px solid #1d0813;
+  border-radius: 5px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.boton-credenciales a:hover {
+  transform: scale(1.05);
+  background-color: #ff4da6;
+}
+
 @keyframes aparecerRamo {
   0% {
     opacity: 0;
