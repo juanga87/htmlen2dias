@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precaución</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .caja {
+    max-width: 500px;
+  }
+  .icono {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.5;
+  }
+  .boton {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+  }
+  .boton:hover {
+    background: #43a047;
+  }
+  .boton:disabled {
+    background: #555;
+    color: #999;
+    cursor: not-allowed;
+  }
+</style>
+</head>
+<body>
+  <div class="caja">
+    <div class="icono">⚠️</div>
+    <h1>Precaución</h1>
+    <p>Esta página está diseñada únicamente para abrirse desde una computadora (escritorio o notebook).</p>
+    <p>Por favor, no la abras desde el celular: el diseño no se va a ver correctamente.</p>
+    <p>No seas boludx, se ve lindo. Aprecialo</p>
+    <button class="boton" id="btnEntendido" disabled>Entendido (6)</button>
+  </div>
+
+  <script>
+    let segundos = 6;
+    const boton = document.getElementById('btnEntendido');
+
+    const intervalo = setInterval(() => {
+      segundos--;
+      if (segundos > 0) {
+        boton.textContent = `Entendido (${segundos})`;
+      } else {
+        clearInterval(intervalo);
+        boton.textContent = 'Entendido';
+        boton.disabled = false;
+      }
+    }, 1000);
+
+    boton.addEventListener('click', () => {
+      window.location.href = 'credenciales.html';
+    });
+  </script>
+</body>
+</html>
